@@ -12,7 +12,7 @@ import pandas
 
 ## 인터파크 작품별 정보 사이트 접속 및 팝업 제거
 # 추후 후기 외 다른 정보도 크롤링할 수도 있으니 접근 / 관람후기 크롤링 분리함
-def IPCrawling(key, title) : # 코드(키), 작품명
+def IPCrawling(key, title, th) : # 코드(키), 작품명
     # 드라이브 로드
     driver = webdriver.Chrome(executable_path='chromedriver.exe')
     # 사이트 접속
@@ -24,12 +24,12 @@ def IPCrawling(key, title) : # 코드(키), 작품명
     elem.click()
 
     # 관람후기 크롤링
-    ReviewCrawling(title, driver)
+    ReviewCrawling(title, th, driver)
     
     driver.quit()
 
 ## 관람후기 데이터 크롤링
-def ReviewCrawling(title, driver) : # 작품명, 드라이버
+def ReviewCrawling(title, th, driver) : # 작품명, 드라이버
     # 관람후기 페이지 접근
     elem = driver.find_element(By.XPATH, "/html/body/div[1]/div[5]/div[1]/div[2]/div[2]/nav/div/div/ul/li[4]/a")
     elem.click()
@@ -80,11 +80,12 @@ def ReviewCrawling(title, driver) : # 작품명, 드라이버
 
     # csv로 저장
     df = pandas.DataFrame(data, columns=["id", "date", "rating", "views", "like", "title", "text"])
-    df.to_csv('../../data/reviews/review_' + title + '.csv', encoding='utf-8-sig')
+    df.to_csv('../../data/reviews/review_' + title + '_' + th + '.csv', encoding='utf-8-sig')
 
 if __name__ == '__main__' :
     # 추후 musical_info 데이터에서 작품명, 코드 가져와서 반복문 돌리기
     key = '22005764#'      # 작품 코드
     title = '유진과 유진'    # 작품명
-    
-    IPCrawling(key, title)
+    th = '2'               #  n연(초연, 재연, ...)
+
+    IPCrawling(key, title, th)
