@@ -20,8 +20,11 @@ def IPCrawling(key, title, th) : # 코드(키), 작품명
     sleep(1)
 
     # 팝업 제거('오늘 하루 안 보기' 클릭)
-    elem = driver.find_element(By.CLASS_NAME, "popupCheckLabel")
-    elem.click()
+    try :
+        elem = driver.find_element(By.CLASS_NAME, "popupCheckLabel")
+        elem.click()
+    except :
+        pass
 
     # 관람후기 크롤링
     ReviewCrawling(title, th, driver)
