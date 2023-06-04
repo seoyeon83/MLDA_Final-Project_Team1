@@ -6,8 +6,6 @@ title = info['title']
 code = info['code']
 th = info['th']
 
-for i in range(len(title)) :
+for i in range(len(title))[44:] :
     print(title[i], th[i])
     IPCrawling(code[i], title[i], th[i])
-
-
