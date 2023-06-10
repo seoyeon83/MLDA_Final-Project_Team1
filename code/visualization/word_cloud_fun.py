@@ -4,32 +4,30 @@ import os
 import pandas as pd
 
 def make_cloud():
-    input_dir = 'C:/Users/1ayou/PycharmProjects/MLDA_Final-Project_Team1/data/morph_data_okt'
-    file_list = os.listdir(input_dir)
-    musical_morphs = []
+    data_dir = ("C:/Users/1ayou/PycharmProjects/MLDA_Final-Project_Team1/data/morph_data_okt")
+    file_list = os.listdir(data_dir)
 
-    for file_name in file_list:
-        print(file_name)
+    for i in file_list:
+        data = pd.read_csv(f"{data_dir}/{i}")
+        musical_morphs = []
+        print(i)
 
-        if file_name.endswith('.csv'):
-            input_file = os.path.join(input_dir, file_name)
+        for j in data.iloc[:, 0]:
+            musical_morphs.append(j)
 
-            data = pd.read_csv(input_file)
+        # 잘 들어갔나 확인
+        # print(musical_morphs)
 
-            for i in data.iloc[:, 0]:
-                musical_morphs.append(i)
+        # 빈도수 카운트 후 가장 많이 나온 단어부터 100개
+        counts = Counter(musical_morphs)
+        tags = counts.most_common(300)
 
-            #전처리 잘 되었는지 확인용
-            print(musical_morphs)
+        wc = WordCloud(font_path="C:/Windows/Fonts/malgun.ttf", background_color="white",
+                       width=1000, height=1000, max_font_size=300)
+        cloud = wc.generate_from_frequencies(dict(tags))
 
-            # 빈도수 카운트 후 가장 많이 나온 단어부터 100개
-            counts = Counter(musical_morphs)
-            tags = counts.most_common(300)
+        cloud.to_file(f"C:/Users/1ayou/PycharmProjects/MLDA_Final-Project_Team1/visualization/word_cloud/{i[:-4]}.jpg")
 
-            wc = WordCloud(font_path="C:/Windows/Fonts/malgun.ttf", background_color="white",
-                           width=1000, height=1000, max_font_size=300)
-            cloud = wc.generate_from_frequencies(dict(tags))
 
-            cloud.to_file(f"{file_name[:-4]}.jpg")
 
 make_cloud()
