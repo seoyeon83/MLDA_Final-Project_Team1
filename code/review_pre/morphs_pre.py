@@ -61,9 +61,9 @@ def pos_okt():
     okt = Okt()  # Instantiate the Okt class
 
     # 전처리 완료된 데이터 경로로 수정해주기!!
-    input_dir = '../MLDA_Final-Project_Team1/data/review_cleaning'
+    input_dir = 'C:/Users/1ayou/PycharmProjects/MLDA_Final-Project_Team1/data/review_cleaning'
     # 저장 경로, 맞춰서 경로 수정해주기!! 근데 이걸로 통일하자
-    output_dir = '../MLDA_Final-Project_Team1/data/morph_data_okt'
+    output_dir = 'C:/Users/1ayou/PycharmProjects/MLDA_Final-Project_Team1/data/morph_data_okt'
 
     # 확인할 디렉토리 내의 파일 리스트 가져오기
     file_list = os.listdir(input_dir)
@@ -88,17 +88,14 @@ def pos_okt():
 
             for text in review:
                 pos_tags = okt.pos(str(text))
-                nouns = []
-                adjectives = []
+
 
                 for word, pos in pos_tags:
                     if pos.startswith('Noun'):  # Noun
-                        nouns.append(word)
+                        noun_list.append(word)
                     elif pos.startswith('Adjective'):  # Adjective
-                        adjectives.append(word)
+                        adjective_list.append(word)
 
-                noun_list.append(nouns)
-                adjective_list.append(adjectives)
 
             n_df = pd.DataFrame({'Nouns': noun_list})
             a_df = pd.DataFrame({'Adjectives': adjective_list})
