@@ -95,7 +95,7 @@ def ReviewCrawling(title, th, driver) : # 작품명, 드라이버
             break
 
     # csv로 저장
-    df = pandas.DataFrame(data, columns=["id", "date", "rating", "views", "like", "title", "text"])
+    df = pandas.DataFrame(data, columns=["rating", "id", "date", "views", "like", "title", "text"])
     df.to_csv('../../data/reviews/review_' + title + '_' + th + '.csv', encoding='utf-8-sig')
 
 if __name__ == '__main__' :
