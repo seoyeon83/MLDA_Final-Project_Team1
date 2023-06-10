@@ -53,8 +53,8 @@ def pos_kk():
             n_df = pd.DataFrame({'Nouns': noun_list})
             a_df = pd.DataFrame({'Adjectives': adjective_list})
 
-            n_df.to_csv(output_dir + f"/noun_{file_name}", index=False)
-            a_df.to_csv(output_dir + f"/adj_{file_name}", index=False)
+            n_df.to_csv(output_dir + f"/noun_{file_name}", index=False, encoding="utf-8-sig")
+            a_df.to_csv(output_dir + f"/adj_{file_name}", index=False, encoding="utf-8-sig")
 
 
 def pos_okt():
@@ -103,13 +103,13 @@ def pos_okt():
             n_df = pd.DataFrame({'Nouns': noun_list})
             a_df = pd.DataFrame({'Adjectives': adjective_list})
 
-            n_df.to_csv(output_dir+f"/noun_{file_name}", index=False)
-            a_df.to_csv(output_dir+f"/adj_{file_name}", index=False)
+            n_df.to_csv(output_dir+f"/noun_{file_name}", index=False, encoding="utf-8-sig")
+            a_df.to_csv(output_dir+f"/adj_{file_name}", index=False, encoding="utf-8-sig")
 
 # #태그세트 보기
 # kkma = Kkma()
 # okt = Okt()
 # print(kkma.tagset, "\n", okt.tagset)
 
-# pos_okt()
+pos_okt()
 # pos_kk()
