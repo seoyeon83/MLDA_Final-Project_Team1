@@ -5,7 +5,7 @@ import pandas as pd
 
 
 def make_cloud():
-    data_dir = ("C:/Users/1ayou/PycharmProjects/MLDA_Final-Project_Team1/data/morph_data_okt")
+    data_dir = ("../data/morph_data_okt")
     file_list = os.listdir(data_dir)
 
     with open("new_stopwords.txt", "r", encoding="utf-8") as f:
