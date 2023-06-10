@@ -5,7 +5,7 @@ import pandas as pd
 
 
 def make_cloud():
-    data_dir = ("../data/morph_data_okt")
+    data_dir = ("C:/Users/1ayou/PycharmProjects/MLDA_Final-Project_Team1/data/morph_data_okt")
     file_list = os.listdir(data_dir)
 
     with open("new_stopwords.txt", "r", encoding="utf-8") as f:
@@ -31,7 +31,7 @@ def make_cloud():
                        width=1000, height=1000, max_font_size=300)
         cloud = wc.generate_from_frequencies(dict(tags))
 
-        cloud.to_file(f"../visualization/word_cloud/{i[:-4]}.jpg")
+        cloud.to_file(f"C:/Users/1ayou/PycharmProjects/MLDA_Final-Project_Team1/visualization/word_cloud/{i[:-4]}.jpg")
 
 
 make_cloud()
