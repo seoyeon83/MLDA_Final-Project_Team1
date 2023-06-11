@@ -3,11 +3,11 @@ import os
 import pandas as pd
 # from pykospacing import Spacing
 
-data_list = os.listdir("../MLDA_Final-Project_Team1/data/tot_review")
+data_list = os.listdir("../../data/tot_review")
 
 def remove_else(review_data):
     # sp = Spacing()
-    data = pd.read_csv(f"../MLDA_Final-Project_Team1/data/tot_review/{review_data}")
+    data = pd.read_csv(f"../../data/tot_review/{review_data}")
     # 중복 제거하기
     data.drop_duplicates(subset=["Id", "Date", "Title", "Text"], inplace=True)
 
@@ -21,9 +21,8 @@ def remove_else(review_data):
     # 스페이싱 다시 해주기
     #     data.iloc[i, 8] = sp(str(data.iloc[i, 8]))
 
-    data.to_csv(f"../MLDA_Final-Project_Team1/data/tot_review/{review_data}", index=True, sep=",", encoding="utf-8-sig")
+    data.to_csv(f"../../data/tot_review/{review_data}", index=False, sep=",", encoding="utf-8-sig")
     return print(data)
-
 
 
 for i in data_list:
