@@ -9,6 +9,7 @@ def make_cloud():
     data_dir = ("../../data/morph_data_okt/spacing이전")
     file_list = os.listdir(data_dir)
 
+    # 불용어 파일 가져오기
     with open("newnew_stopwords.txt", "r", encoding="utf-8") as f:
         stopwords_list = f.readlines()  # list
 
@@ -19,6 +20,7 @@ def make_cloud():
         musical_morphs = []
         print(i)
 
+        #불용어 제거
         for j in data.iloc[:, 0]:
             if j not in stopwords and len(j) > 1: # 단어 크기가 2 이상인 것만
                 musical_morphs.append(j)
