@@ -6,7 +6,7 @@ import pandas as pd
 # 카운팅을 따로 안하고 카운트해둔 데이터로 워드클라우드 찍기
 def make_cloud_not_count():
     # 상대경로로 수정함
-    data_dir = ("../../data/review_count")
+    data_dir = ("../../data/review_count_top20")
     file_list = os.listdir(data_dir)
 
 
