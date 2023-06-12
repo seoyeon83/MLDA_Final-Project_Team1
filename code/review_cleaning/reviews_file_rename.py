@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-file_path  = ("../../data/musical_morph_okt")
+file_path  = ("../../data/morph_data_okt")
 
 file_list = os.listdir(file_path)
 
@@ -11,7 +11,7 @@ for i in file_list[2:]:
     if "_spacing" in i :
         dst = ''.join(i.split('_spacing'))
 
-    elif "musical_review_raw_data" not in i :
+    elif "reviews" not in i :
         if "adj" in i :
             dst = f'{i[:3]}_reviews{i[3:]}'
         elif "noun" in i :

@@ -24,7 +24,7 @@ def GetTFIDF(df) :
 
 # 상대경로로 수정함
 def joinWords() :
-    data_dir = ("../../data/musical_morph_okt")
+    data_dir = ("../../data/morph_data_okt")
     file_list = os.listdir(data_dir)
 
     # 형용사, 명사 별 리뷰 내용, 작품 제목 저장
@@ -48,9 +48,9 @@ def joinWords() :
     adj = pd.DataFrame({"title" : adj_all_tit, "text" : adj_all_text})
     noun = pd.DataFrame({"title": noun_all_tit, "text": noun_all_text})
 
-    adj.iloc[:, [0]].to_csv("../../data/musical_review_tfidf/reviews_title.csv", encoding="utf-8-sig")
-    GetTFIDF(adj).to_csv("../../data/musical_review_tfidf/adj_reviews_tf-idf.csv", encoding="utf-8-sig")
-    GetTFIDF(noun).to_csv("../../data/musical_review_tfidf/noun_reviews_tf-idf.csv", encoding="utf-8-sig")
+    adj.iloc[:, [0]].to_csv("../../data/review_tfidf/reviews_title.csv", encoding="utf-8-sig")
+    GetTFIDF(adj).to_csv("../../data/review_tfidf/adj_reviews_tf-idf.csv", encoding="utf-8-sig")
+    GetTFIDF(noun).to_csv("../../data/review_tfidf/noun_reviews_tf-idf.csv", encoding="utf-8-sig")
 
 # 제목과 tf-idf 결과는 손으로 합쳐줌
 joinWords()

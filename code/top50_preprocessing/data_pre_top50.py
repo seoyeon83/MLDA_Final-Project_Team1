@@ -2,14 +2,14 @@ import pandas as pd
 import os
 
 # 데이터 목록 리스트로 불러오기
-data_list = os.listdir("./MLDA_Final-Project_Team1/data/musical_top10_info")
+data_list = os.listdir("./MLDA_Final-Project_Team1/data/musical_top10_since2019")
 
 # 데이터 쌓아줄 빈 df
 all_data = pd.DataFrame()
 
 # 빈 df에 데이터 차곡차곡 합쳐줌
 for tit in data_list:
-    data = pd.read_csv("./MLDA_Final-Project_Team1/data/musical_top10_info/%s"%tit)
+    data = pd.read_csv("./MLDA_Final-Project_Team1/data/musical_top10_since2019/%s"%tit)
     all_data = pd.concat([all_data, data], axis=0)
 
 # 카운트값 가져오고 라이선스인지 창작인지 넣어주기 위해 빈 컬럼 생성

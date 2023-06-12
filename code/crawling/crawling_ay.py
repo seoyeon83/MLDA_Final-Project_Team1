@@ -1,7 +1,7 @@
 import InterparkCrawling as ic
 import pandas as pd
 
-info = pd.read_csv("/data/musical_crawling_info/musical_info_ay.csv",
+info = pd.read_csv("C:/Users/1ayou/PycharmProjects/MLDA_Final-Project_Team1/data/musical_info/musical_info_ay.csv",
                    encoding="utf-8-sig")
 
 name = info["Musical"]
