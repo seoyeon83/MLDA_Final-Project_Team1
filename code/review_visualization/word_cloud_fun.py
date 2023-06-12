@@ -6,7 +6,7 @@ import pandas as pd
 
 def make_cloud():
     # 상대경로로 수정함
-    data_dir = ("../../data/morph_data_okt")
+    data_dir = ("../../data/review_morph_okt")
     file_list = os.listdir(data_dir)
 
     # 불용어 파일 가져오기

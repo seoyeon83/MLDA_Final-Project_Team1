@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-file_path  = ("../../data/morph_data_okt")
+file_path  = ("../../data/review_morph_okt")
 
 file_list = os.listdir(file_path)
 
