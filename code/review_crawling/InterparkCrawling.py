@@ -96,7 +96,7 @@ def ReviewCrawling(title, th, driver) : # 작품명, 드라이버
 
     # csv로 저장
     df = pandas.DataFrame(data, columns=["rating", "id", "date", "views", "like", "title", "text"])
-    df.to_csv('../../data/reviews/review_' + title + '_' + th + '.csv', encoding='utf-8-sig')
+    df.to_csv('../../data/musical_review_raw_data/review_' + title + '_' + th + '.csv', encoding='utf-8-sig')
 
 if __name__ == '__main__' :
     # 추후 musical_info 데이터에서 작품명, 코드 가져와서 반복문 돌리기

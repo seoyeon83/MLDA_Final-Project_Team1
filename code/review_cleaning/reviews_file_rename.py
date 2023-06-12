@@ -11,7 +11,7 @@ for i in file_list[2:]:
     if "_spacing" in i :
         dst = ''.join(i.split('_spacing'))
 
-    elif "reviews" not in i :
+    elif "musical_review_raw_data" not in i :
         if "adj" in i :
             dst = f'{i[:3]}_reviews{i[3:]}'
         elif "noun" in i :
