@@ -62,7 +62,7 @@ def pos_okt():
 
     # 전처리 완료된 데이터 경로로 수정해주기!!
 
-    input_dir = '../../data/review_cleaning'
+    input_dir = '../../data/musical_review_spacing'
     # 저장 경로, 맞춰서 경로 수정해주기!! 근데 이걸로 통일하자
     output_dir = '../../data/review_morph_okt'
 
