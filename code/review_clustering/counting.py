@@ -2,19 +2,19 @@ from collections import Counter
 import os
 import pandas as pd
 
-def count_words() :
+def count_words(n) : # n은 몇 단어를 카운팅할지.
     # 상대경로로 수정함
-    data_dir = ("../../data/morph_data_okt_cleaning")
+    data_dir = ("../../data/review_adj_sub")
     file_list = os.listdir(data_dir)
 
     # 불용어 파일 가져오기
-    with open("../vis_code/newnew_stopwords.txt", "r", encoding="utf-8") as f:
+    with open("../review_visualization/newnew_stopwords.txt", "r", encoding="utf-8") as f:
         stopwords_list = f.readlines()  # list
 
     stopwords = stopwords_list[0].split(",")
 
-    for i in file_list[2:]:
-        data = pd.read_csv(f"{data_dir}/{i}", index_col=0)
+    for i in file_list:
+        data = pd.read_csv(f"{data_dir}/{i}")
         musical_morphs = []
         print(i)
 
@@ -28,9 +28,7 @@ def count_words() :
 
         # 빈도수 카운트 후 가장 많이 나온 단어부터 20개
         counts = Counter(musical_morphs)
-        tags = counts.most_common(20)
+        tags = counts.most_common(n)
         df = pd.DataFrame(tags, columns=["word", "count"])
 
-        df.to_csv(f'../../data/review_count/{i[:-13]}_count.csv', encoding='utf-8-sig')
-
-count_words()
+        df.to_csv(f'../../data/review_count/{i[:-4]}_count_{n}.csv', encoding='utf-8-sig', index=False)

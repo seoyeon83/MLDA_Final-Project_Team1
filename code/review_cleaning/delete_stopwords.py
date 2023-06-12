@@ -27,6 +27,6 @@ def deleteStopwords():
         # 불용어 삭제
         data.drop(drop_idx, axis=0, inplace=True)
 
-        data.to_csv(f"../../data/morph_data_okt_cleaning/{i[:-4]}_cleaning.csv", encoding='utf-8-sig')
+        data.to_csv(f"../../data/review_morph_okt_cleaning/{i[:-4]}_cleaning.csv", encoding='utf-8-sig')
 
 deleteStopwords()
