@@ -6,7 +6,7 @@ def deleteStopwords():
     data_dir = ("../../data/musical_morph_okt")
     file_list = os.listdir(data_dir)
 
-    with open("../review_visualization/newnew_stopwords.txt", "r", encoding="utf-8") as f:
+    with open("../vis_code/newnew_stopwords.txt", "r", encoding="utf-8") as f:
         stopwords_list = f.readlines()  # list
 
     stopwords = stopwords_list[0].split(",")
