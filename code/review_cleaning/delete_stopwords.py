@@ -3,7 +3,7 @@ import pandas as pd
 
 # 불용어 삭제 함수
 def deleteStopwords():
-    data_dir = ("../../data/morph_data_okt")
+    data_dir = ("../../data/review_morph_okt")
     file_list = os.listdir(data_dir)
 
     with open("../review_visualization/newnew_stopwords.txt", "r", encoding="utf-8") as f:

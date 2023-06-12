@@ -64,7 +64,7 @@ def pos_okt():
 
     input_dir = '../../data/review_cleaning'
     # 저장 경로, 맞춰서 경로 수정해주기!! 근데 이걸로 통일하자
-    output_dir = '../../data/morph_data_okt'
+    output_dir = '../../data/review_morph_okt'
 
 
     # 확인할 디렉토리 내의 파일 리스트 가져오기
