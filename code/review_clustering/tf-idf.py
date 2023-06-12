@@ -24,7 +24,7 @@ def GetTFIDF(df) :
 
 # 상대경로로 수정함
 def joinWords() :
-    data_dir = ("../../data/morph_data_okt")
+    data_dir = ("../../data/review_morph_okt")
     file_list = os.listdir(data_dir)
 
     # 형용사, 명사 별 리뷰 내용, 작품 제목 저장
