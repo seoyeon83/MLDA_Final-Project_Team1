@@ -1,6 +1,6 @@
 from InterparkCrawling import *
 
-info = pandas.read_csv('../../data/musical_info/musical_info_sy.csv', encoding='utf-8-sig')
+info = pandas.read_csv('../../data/musical_crawling_info/musical_info_sy.csv', encoding='utf-8-sig')
 
 title = info['title']
 code = info['code']
